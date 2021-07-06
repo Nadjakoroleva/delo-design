@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        font-family: 'Geometria',Helvetica,sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        color: #000 !important;
+        white-space: nowrap;
+   }
+    .header {
+        position: relative;
+        background: url(https://i.postimg.cc/7LkKhqLV/bgi.jpg) no-repeat;
+        background-size: cover;
+        height: 100vh;
+        text-transform: uppercase;
+   }
+   .header__logo {
+     position: absolute;
+        top: 30px;
+       left: 40px;
+        font-family: 'Futura PT', Helvetica, sans-serif !important;
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 1;
+        color: #000 !important;
+   }
+
+   .header__logo:hover {
+    color: #000 !important;
+   }
+
+    .menu {
+        padding: 50px 0 90px;
+        background-color: white;
+        transition: opacity 0.5s ease-in;
+        opacity: 0;
+   }
+    .nav {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        display: flex;
+        justify-content: flex-end;
+        background: transparent;
+   }
+    .nav__list {
+        background: transparent;
+   }
+    .nav :not(:first-child) {
+        margin-left: 40px;
+   }
+    .nav__link {
+        color: #212121;
+        transition: opacity 0.3s ease-in;
+        background: transparent;
+   }
+    .nav__link:hover {
+        opacity: 0.4;
+   }
+    .nav__submenu {
+        display: flex;
+        position: absolute;
+        top: 30px;
+        right: 0px;
+        background: transparent;
+        transition: all 0.5s ease-in;
+        display: none;
+   }
+    .nav__submenu-list {
+        background: transparent;
+   }
+    .nav__submenu-link {
+        color: #212121;
+        background: transparent;
+        margin: 0;
+   }
+    .nav__submenu-furniture {
+        position: absolute;
+        top: 30px;
+        right: 0px;
+        white-space: nowrap;
+        background: transparent;
+        display: flex;
+        opacity: 0;
+   }
+    .nav__submenu-furniture li {
+        background: transparent;
+   }
+    .nav__submenu-furniture a {
+        transition: opacity 0.3s ease-in;
+        background: transparent;
+        color: #212121;
+   }
+    .nav__submenu-furniture a:hover {
+        opacity: 0.4;
+   }
+    .nav__submenu-link {
+        transition: opacity 0.3s ease-in;
+   }
+    .nav__submenu-link:hover {
+        opacity: 0.4;
+   }
+    </style>
+</head>
+<body>
+    
+<header class="header">
+   <div class="header__logo">
+       <img height="30px" alt="logo delo design" src="https://images.ctfassets.net/r0lccig03c53/3dQZhny2RbEAMXnVc6F7M6/9b964ca3ee48dca59e437ba061ae1a37/Lightbox-2_1.png"/>
+   </div> 
+    
+      <div class="menu"> </div>
+        <ul class="nav">
+          <li class="nav__list nav__list_shop"><a class="nav__link" href="#">Магазин</a>
+              <ul class="nav__submenu">
+                <li class="nav__submenu-list"><a class="nav__submenu-link nav__submenu-link_furniture" href="https://delo-design.com/store">Мебель</a>
+                  <ul class="nav__submenu-furniture">
+                       <li><a href="https://delo-design.com/chairs">Стулья и кресла</a></li>
+                       <li><a href="https://delo-design.com/tables">Столы</a></li>
+                    <li><a href="https://delo-design.com/sofas">Диваны</a></li>
+                    
+                    <li><a href="https://delo-design.com/shelving">Стеллажи</a></li>
+                   
+                    <li><a href="https://delo-design.com/store">Вся мебель</a></li>
+                  </ul>
+               </li>
+                
+                <li class="nav__submenu-list"><a class="nav__submenu-link link-hover" href="https://store.delo-design.com/">Аксессуары</a></li>
+                <li class="nav__submenu-list"><a class="nav__submenu-link link-hover" href="#">Дома</a></li>
+              </ul>
+          </li>
+         
+            <li class="nav__list"><a class="nav__link link-hover" href="https://delo-design.com/faq">Faq</a></li>
+            <li class="nav__list"><a class="nav__link link-hover" href="https://delo-design.com/contact">Конакты</a></li>
+            <li class="nav__list"><a class="nav__link link-hover" href="https://en.delo-design.com/">En</a></li>
+        </ul>
+      
+    </header>
+    <script>const menu = document.querySelector('.menu');
+        const navLink = document.querySelector('.nav');
+        const header = document.querySelector('.header');
+        
+        const navShop = document.querySelector('.nav__list_shop');
+        const navSubmenu = document.querySelector('.nav__submenu');
+        
+        const navSubmenuList = document.querySelector('.nav__submenu-list');
+        
+        const navSubmenuFurniture = document.querySelector('.nav__submenu-furniture');
+        const navLinkFurniture = document.querySelector('.nav__submenu-link_furniture');
+        
+        
+  
+        navLinkFurniture.addEventListener('mouseover', function() {
+          navSubmenuFurniture.style.opacity = '1';
+    
+        })
+        navLinkFurniture.addEventListener('mouseout', function() {
+       
+        })
+       
+        
+
+        navShop.addEventListener('mouseover', function() {
+         
+          navSubmenu.style.display = 'flex';
+        })
+        navShop.addEventListener('mouseout', function() {
+         
+        })
+        
+        navLink.addEventListener('mouseout', function() {
+         
+        })
+        
+        navLink.addEventListener('mouseover', function() {
+          menu.style.opacity = '.7';
+          
+        });
+        
+        navLink.addEventListener('mouseout', function() {
+          menu.style.opacity = '0'
+          
+        });
+        
+        menu.addEventListener('mouseover', function() {
+          menu.style.opacity = '.7';
+        
+          
+        });
+        
+        menu.addEventListener('mouseout', function() {
+          menu.style.opacity = '0';
+        
+          navSubmenu.style.display = 'none';
+        });
+        
+        /* ---------------------------------------------------------------------------- */
+        
+        const linkHover = [...document.querySelectorAll('.link-hover')].forEach(linkHover => {
+            linkHover.addEventListener('mouseover', () => {
+                navSubmenuFurniture.style.opacity = '0';
+               
+                navSubmenu.style.display = 'none';
+               
+            });
+        });
+        
+        
+        
+        </script>
+</body>
+</html>
