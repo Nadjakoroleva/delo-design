@@ -42,10 +42,11 @@
       }
 
       .menu {
-        padding: 50px 0 90px;
+        /* padding: 50px 0 90px; */
         background-color: white;
         transition: opacity 0.5s ease-in;
         opacity: 0;
+        min-height: 65px;
       }
       .nav {
         position: absolute;
@@ -94,8 +95,8 @@
         background: transparent;
         display: flex;
         /* opacity: 0; */
-        /* display: none; */
-        visibility: hidden;
+        display: none;
+        /* visibility: hidden; */
       }
       .nav__submenu-furniture li {
         background: transparent;
@@ -130,10 +131,10 @@
         />
       </div>
 
-      <div class="menu"></div>
+      <div class="menu menu_hidden"></div>
       <ul class="nav">
         <li class="nav__list nav__list_shop">
-          <a class="nav__link nav__link_shop link-hover" href="#">Магазин</a>
+          <a class="nav__link link-hover" href="#">Магазин</a>
           <ul class="nav__submenu">
             <li class="nav__submenu-list">
               <a
@@ -168,29 +169,49 @@
         </li>
 
         <li class="nav__list">
-          <a class="nav__link link-hover" href="https://delo-design.com/faq"
+          <a
+            class="nav__link link-hover nav__link_hidden"
+            href="https://delo-design.com/faq"
             >Faq</a
           >
         </li>
         <li class="nav__list">
-          <a class="nav__link link-hover" href="https://delo-design.com/contact"
+          <a
+            class="nav__link link-hover nav__link_hidden"
+            href="https://delo-design.com/contact"
             >Конакты</a
           >
         </li>
         <li class="nav__list">
-          <a class="nav__link link-hover" href="https://en.delo-design.com/"
+          <a
+            class="nav__link link-hover nav__link_hidden"
+            href="https://en.delo-design.com/"
             >En</a
           >
         </li>
       </ul>
     </header>
     <script>
-      const menu = document.querySelector(".menu");
       const navLink = document.querySelector(".nav");
+      const menu = document.querySelector(".menu");
+
       const header = document.querySelector(".header");
 
       const navShop = document.querySelector(".nav__list_shop");
       const navSubmenu = document.querySelector(".nav__submenu");
+
+      // const menuHidden = document.querySelector(".menu_hidden");
+      // menuHidden.addEventListener("mouseout", function () {
+      //   menu.style.minHeight = "65px";
+      // });
+
+      const navHidden = [
+        ...document.querySelectorAll(".nav__link_hidden"),
+      ].forEach((navHidden) => {
+        navHidden.addEventListener("mouseover", () => {
+          menu.style.height = "65px";
+        });
+      });
 
       // 3 подменю
       const navSubmenuFurniture = document.querySelector(
@@ -220,17 +241,17 @@
       });
 
       /* --------------------------------------------------- */
-      //
       // 2. При наведении на пункт МАГАЗИН → добавляется подменю  Мебель, аксессуары,дома
       navShop.addEventListener("mouseover", function () {
+        menu.style.height = "100px";
         navSubmenu.style.display = "flex";
-        console.log("magaz");
       });
 
       // 3. При наведении на пункт МЕБЕЛЬ → добавляется подменю (диваны, столы и тд)
       navLinkFurniture.addEventListener("mouseover", function () {
+        menu.style.minHeight = "135px";
         navSubmenuFurniture.style.display = "flex";
-        navSubmenuFurniture.style.visibility = "visible";
+        console.log("mz");
       });
 
       // 4. Если увести мышку с меню, прозрачный блок и все открытые подпункты сворачиваются
@@ -239,6 +260,7 @@
           linkHover.addEventListener("mouseover", () => {
             navSubmenuFurniture.style.display = "none";
             navSubmenu.style.display = "none";
+            menu.style.minHeight = "65px";
           });
         }
       );
