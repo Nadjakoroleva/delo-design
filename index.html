@@ -46,9 +46,9 @@
         background-color: white;
         transition: opacity 0.5s ease-in;
         opacity: 0;
-        min-height: 65px;
+        /* min-height: 65px; */
 
-        /* height: 65px; */
+        height: 65px;
       }
       .nav {
         position: absolute;
@@ -97,7 +97,7 @@
         background: transparent;
         display: flex;
         /* opacity: 0; */
-        /* display: none; */
+        display: none;
         /* visibility: hidden; */
       }
       .nav__submenu-furniture li {
@@ -117,15 +117,9 @@
       .nav__submenu-link:hover {
         opacity: 0.4;
       }
-
-      .hidden-submenu {
-        display: none;
-      }
-      /* .nav__submenu-link_furniture {
+      /* .menu_hidden {
         outline: 1px solid red;
-      }
-      .nav__submenu-furniture_link {
-        outline: 1px solid blue;
+        height: 65px;
       } */
     </style>
   </head>
@@ -217,19 +211,20 @@
       const navSubmenu = document.querySelector(".nav__submenu");
 
       // ссылки стулья и кресла столы диваны стелажи вся мебель
-
       const navSubmenuLink = document.querySelector(
         ".nav__submenu-furniture_link"
       );
       navSubmenuLink.addEventListener("mouseover", function () {
         console.log("work");
-        menu.style.height = "135px";
+        // menu.style.height = "135px";
+        menu.style.minHeight = "135px";
       });
 
       //1
       const menuHidden = document.querySelector(".menu_hidden");
       menuHidden.addEventListener("mouseout", function () {
-        menu.style.height = "65px";
+        // menu.style.height = "65px";
+        // menu.style.minHeight = "65px";
       });
 
       // ссылки FAQ КОНТАКТЫ EN
@@ -237,8 +232,8 @@
         ...document.querySelectorAll(".nav__link_hidden"),
       ].forEach((navHidden) => {
         navHidden.addEventListener("mouseover", () => {
-          menu.style.minHeight = "65px";
-          // menu.style.height = "65px";
+          // menu.style.minHeight = "65px";
+          menu.style.height = "65px";
         });
       });
 
@@ -250,8 +245,9 @@
         ".nav__submenu-link_furniture"
       );
 
-      menu.addEventListener("mouseover", function () {
+      menu.addEventListener("mouseout", function () {
         // menu.style.minHeight = "65px";
+        menu.style.height = "65px";
       });
 
       /* 1. Меню, при наведении добавляет прозрачный блок на всю ширину*/
@@ -269,6 +265,7 @@
       });
 
       menu.addEventListener("mouseout", function () {
+        menuHidden.style.minHeight = "65px";
         menu.style.opacity = "0";
         navSubmenu.style.display = "none";
       });
@@ -276,25 +273,27 @@
       /* --------------------------------------------------- */
       // 2. При наведении на пункт МАГАЗИН → добавляется подменю  Мебель, аксессуары,дома
       navShop.addEventListener("mouseover", function () {
-        menu.style.minHeight = "100px";
-        // menu.style.height = "100px";
+        // menu.style.minHeight = "100px";
+        menu.style.height = "100px";
         navSubmenu.style.display = "flex";
       });
 
       // 3. При наведении на пункт МЕБЕЛЬ → добавляется подменю (диваны, столы и тд)
       navLinkFurniture.addEventListener("mouseover", function () {
-        // menu.style.minHeight = "135px";
-        menu.style.height = "135px";
+        menu.style.minHeight = "135px";
+        // menu.style.height = "135px";
         navSubmenuFurniture.style.display = "flex";
       });
 
-      // 4. Если увести мышку с меню, прозрачный блок и все открытые подпункты сворачиваются
+      // 4. При наведении на другие ссылки не активное меню исчезает
       const linkHover = [...document.querySelectorAll(".link-hover")].forEach(
         (linkHover) => {
           linkHover.addEventListener("mouseover", () => {
             navSubmenuFurniture.style.display = "none";
             navSubmenu.style.display = "none";
-            menu.style.height = "65px";
+            // menu.style.height = "65px";
+            menu.style.minHeight = "65px";
+            menuHidden.style.minHeight = "65px";
           });
         }
       );
