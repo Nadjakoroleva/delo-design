@@ -46,7 +46,9 @@
         background-color: white;
         transition: opacity 0.5s ease-in;
         opacity: 0;
-        min-height: 65px;
+        /* min-height: 65px; */
+
+        height: 65px;
       }
       .nav {
         position: absolute;
@@ -115,10 +117,10 @@
       .nav__submenu-link:hover {
         opacity: 0.4;
       }
-
-      .hidden-submenu {
-        display: none;
-      }
+      /* .menu_hidden {
+        outline: 1px solid red;
+        height: 65px;
+      } */
     </style>
   </head>
   <body>
@@ -131,7 +133,7 @@
         />
       </div>
 
-      <div class="menu menu_hidden"></div>
+      <div class="menu menu_hidden menu_submenu-hidden"></div>
       <ul class="nav">
         <li class="nav__list nav__list_shop">
           <a class="nav__link link-hover" href="#">Магазин</a>
@@ -142,16 +144,24 @@
                 href="https://delo-design.com/store"
                 >Мебель</a
               >
-              <ul class="nav__submenu-furniture">
+              <ul class="nav__submenu-furniture nav__submenu-furniture_link">
                 <li>
                   <a href="https://delo-design.com/chairs">Стулья и кресла</a>
                 </li>
-                <li><a href="https://delo-design.com/tables">Столы</a></li>
-                <li><a href="https://delo-design.com/sofas">Диваны</a></li>
+                <li>
+                  <a href="https://delo-design.com/tables">Столы</a>
+                </li>
+                <li>
+                  <a href="https://delo-design.com/sofas">Диваны</a>
+                </li>
 
-                <li><a href="https://delo-design.com/shelving">Стеллажи</a></li>
+                <li>
+                  <a href="https://delo-design.com/shelving">Стеллажи</a>
+                </li>
 
-                <li><a href="https://delo-design.com/store">Вся мебель</a></li>
+                <li>
+                  <a href="https://delo-design.com/store">Вся мебель</a>
+                </li>
               </ul>
             </li>
 
@@ -200,15 +210,29 @@
       const navShop = document.querySelector(".nav__list_shop");
       const navSubmenu = document.querySelector(".nav__submenu");
 
-      // const menuHidden = document.querySelector(".menu_hidden");
-      // menuHidden.addEventListener("mouseout", function () {
-      //   menu.style.minHeight = "65px";
-      // });
+      // ссылки стулья и кресла столы диваны стелажи вся мебель
+      const navSubmenuLink = document.querySelector(
+        ".nav__submenu-furniture_link"
+      );
+      navSubmenuLink.addEventListener("mouseover", function () {
+        console.log("work");
+        // menu.style.height = "135px";
+        menu.style.minHeight = "135px";
+      });
 
+      //1
+      const menuHidden = document.querySelector(".menu_hidden");
+      menuHidden.addEventListener("mouseout", function () {
+        // menu.style.height = "65px";
+        // menu.style.minHeight = "65px";
+      });
+
+      // ссылки FAQ КОНТАКТЫ EN
       const navHidden = [
         ...document.querySelectorAll(".nav__link_hidden"),
       ].forEach((navHidden) => {
         navHidden.addEventListener("mouseover", () => {
+          // menu.style.minHeight = "65px";
           menu.style.height = "65px";
         });
       });
@@ -220,6 +244,11 @@
       const navLinkFurniture = document.querySelector(
         ".nav__submenu-link_furniture"
       );
+
+      menu.addEventListener("mouseout", function () {
+        // menu.style.minHeight = "65px";
+        menu.style.height = "65px";
+      });
 
       /* 1. Меню, при наведении добавляет прозрачный блок на всю ширину*/
       navLink.addEventListener("mouseover", function () {
@@ -236,6 +265,7 @@
       });
 
       menu.addEventListener("mouseout", function () {
+        menuHidden.style.minHeight = "65px";
         menu.style.opacity = "0";
         navSubmenu.style.display = "none";
       });
@@ -243,6 +273,7 @@
       /* --------------------------------------------------- */
       // 2. При наведении на пункт МАГАЗИН → добавляется подменю  Мебель, аксессуары,дома
       navShop.addEventListener("mouseover", function () {
+        // menu.style.minHeight = "100px";
         menu.style.height = "100px";
         navSubmenu.style.display = "flex";
       });
@@ -250,17 +281,19 @@
       // 3. При наведении на пункт МЕБЕЛЬ → добавляется подменю (диваны, столы и тд)
       navLinkFurniture.addEventListener("mouseover", function () {
         menu.style.minHeight = "135px";
+        // menu.style.height = "135px";
         navSubmenuFurniture.style.display = "flex";
-        console.log("mz");
       });
 
-      // 4. Если увести мышку с меню, прозрачный блок и все открытые подпункты сворачиваются
+      // 4. При наведении на другие ссылки не активное меню исчезает
       const linkHover = [...document.querySelectorAll(".link-hover")].forEach(
         (linkHover) => {
           linkHover.addEventListener("mouseover", () => {
             navSubmenuFurniture.style.display = "none";
             navSubmenu.style.display = "none";
+            // menu.style.height = "65px";
             menu.style.minHeight = "65px";
+            menuHidden.style.minHeight = "65px";
           });
         }
       );
