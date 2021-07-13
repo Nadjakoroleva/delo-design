@@ -131,6 +131,9 @@
       /* .menu_hidden {
         height: 100%;
       } */
+      /* .nav__submenu-furniture {
+        outline: 1px solid red;
+      } */
     </style>
   </head>
   <body class="root">
@@ -218,6 +221,10 @@
       bodyPage.addEventListener('click', function () {
         navSubmenuFurniture.style.opacity = '0';
         navSubmenu.style.opacity = '0';
+        // navSubmenuFurniture.style.cursor = 'none';
+        // navSubmenu.style.cursor = 'none';
+        navSubmenu.style.visibility = 'hidden';
+        navSubmenuFurniture.style.visibility = 'hidden';
       });
       // 1. При наведении на пункт МАГАЗИН → добавляется подменю  Мебель, аксессуары,дома
       navShop.addEventListener('mouseover', function () {
@@ -231,6 +238,7 @@
           hiverMenu1.addEventListener('mouseover', () => {
             // navSubmenu.style.display = 'none';
             navSubmenu.style.opacity = '0';
+            navSubmenu.style.visibility = 'hidden';
           });
         }
       );
@@ -238,6 +246,7 @@
       const linkHover = [...document.querySelectorAll('.link-hover')].forEach((linkHover) => {
         linkHover.addEventListener('mouseover', () => {
           navSubmenuFurniture.style.opacity = '0';
+          navSubmenuFurniture.style.visibility = 'hidden';
         });
       });
 
