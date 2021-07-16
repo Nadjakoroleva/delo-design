@@ -5,255 +5,212 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        list-style: none;
-        font-family: 'Geometria', Helvetica, sans-serif;
-        font-weight: 500;
-        font-size: 16px;
-        color: #000 !important;
-      }
-      .header {
-        position: relative;
-        text-transform: uppercase;
-      }
-      .header__logo {
-        position: fixed;
-        top: 30px;
-        left: 40px;
-        font-family: 'Futura PT', Helvetica, sans-serif !important;
-        font-weight: 500;
-        font-size: 35px;
-        line-height: 1;
-        color: #000 !important;
-        z-index: 100;
-      }
+		<header class="header">
+      <div class="logo">DELO</div>
 
-      .header__logo:hover {
-        color: #000 !important;
-      }
-
-      .menu {
-        background-color: rgb(255, 255, 255, 0.7);
-        transition: opacity 0.5s ease-in;
-        /* opacity: 0; */
-        /* min-height: 65px; */
-        height: 130px;
-      }
-      .nav {
-        /* position: absolute; */
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        display: flex;
-        justify-content: flex-end;
-        background: transparent;
-        z-index: 100;
-      }
-      .nav__list {
-        background: transparent;
-      }
-      .nav :not(:first-child) {
-        margin-left: 40px;
-      }
-      .nav__link {
-        color: #212121;
-        transition: opacity 0.3s ease-in;
-        background: transparent;
-      }
-      .nav__link:hover {
-        opacity: 0.4;
-      }
-      .nav__submenu {
-        display: flex;
-        position: absolute;
-        top: 30px;
-        right: 0px;
-        background: transparent;
-        transition: all 0.5s ease-in;
-        /* display: none; */
-        /* opacity: 0; */
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 0.5s linear;
-      }
-      .nav__submenu-list {
-        background: transparent;
-      }
-      .nav__submenu-link {
-        color: #212121;
-        background: transparent;
-        margin: 0;
-      }
-      .nav__submenu-furniture {
-        display: flex;
-        position: absolute;
-        top: 30px;
-        right: 0px;
-        white-space: nowrap;
-        background: transparent;
-        /* opacity: 0; */
-        /* display: none; */
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 0.5s linear;
-      }
-
-      .nav__submenu-furniture li {
-        background: transparent;
-      }
-      .nav__submenu-furniture a {
-        transition: opacity 0.3s ease-in;
-        background: transparent;
-        color: #212121;
-      }
-      .nav__submenu-furniture a:hover {
-        opacity: 0.4;
-      }
-      .nav__submenu-link {
-        transition: opacity 0.3s ease-in;
-      }
-      .nav__submenu-link:hover {
-        opacity: 0.4;
-      }
-
-      .hidden-submenu {
-        display: none;
-      }
-
-      /* .menu_hidden {
-        height: 100%;
-      } */
-      /* .nav__submenu-furniture {
-        outline: 1px solid red;
-      } */
-    </style>
-  </head>
-  <body class="root">
-    <header class="header">
-      <p class="header__logo">
-           delo
-      </p>
-
-      <div class="menu"></div>
-      <ul class="nav">
-        <li class="nav__list">
-          <a class="nav__link link-hover nav__list_shop" href="#">Магазин</a>
-          <ul class="nav__submenu">
-            <li class="nav__submenu-list">
-              <a
-                class="nav__submenu-link nav__submenu-link_furniture"
-                href="https://delo-design.com/store"
-                >Мебель</a
-              >
-              <ul class="nav__submenu-furniture">
-                <li>
-                  <a href="https://delo-design.com/chairs">Стулья и кресла</a>
-                </li>
-                <li><a href="https://delo-design.com/tables">Столы</a></li>
-                <li><a href="https://delo-design.com/sofas">Диваны</a></li>
-
-                <li>
-                  <a href="https://delo-design.com/shelving">Стеллажи</a>
-                </li>
-
-                <li>
-                  <a href="https://delo-design.com/store">Вся мебель</a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav__submenu-list">
-              <a class="nav__submenu-link link-hover" href="https://store.delo-design.com/"
-                >Аксессуары</a
-              >
-            </li>
-            <li class="nav__submenu-list">
-              <a class="nav__submenu-link link-hover" href="#">Дома</a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="nav__list">
-          <a class="nav__link link-hover nav__link_hidden" href="https://delo-design.com/faq"
-            >Faq</a
-          >
-        </li>
-        <li class="nav__list">
-          <a class="nav__link link-hover nav__link_hidden" href="https://delo-design.com/contact"
-            >Конакты</a
-          >
-        </li>
-        <li class="nav__list">
-          <a class="nav__link link-hover nav__link_hidden" href="https://en.delo-design.com/">En</a>
-        </li>
+      <ul class="header__menu_list-1">
+        <li><a class="shop" href="#">Магазин</a></li>
+        <li><a class="hidden-menu-1" href="#">Faq</a></li>
+        <li><a class="hidden-menu-1" href="#">Котакты</a></li>
+        <li><a class="hidden-menu-1" href="#">En</a></li>
       </ul>
+      <div class="header__menu-1"></div>
 
-      <!-- <div class="menu_hidden"></div> -->
+      <ul class="header__menu_list-2">
+        <li><a class="furniture" href="#">Мебель</a></li>
+        <li><a class="hidden-menu-2" href="#">Аксессуары</a></li>
+        <li><a class="hidden-menu-2" href="#">Дома</a></li>
+      </ul>
+      <div class="header__menu-2"></div>
+
+      <ul class="header__menu_list-3">
+        <li><a href="#">Стулья и кресла</a></li>
+        <li><a href="#">Столы</a></li>
+        <li><a href="#">Диваны</a></li>
+        <li><a href="#">Стеллажы</a></li>
+        <li><a href="#">Вся мебель</a></li>
+      </ul>
+      <div class="header__menu-3"></div>
+      <div class="line"></div>
     </header>
 
+    <style>
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  transition: opacity 0.5s ease-in;
+}
+a:hover {
+  opacity: 0.4;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+ul :not(:first-child) {
+  margin-left: 40px;
+}
+
+.logo {
+  z-index: 1000;
+  position: fixed;
+  top: 10px;
+  left: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+/* ---------------------------------------------------------------------------- */
+.header__menu-1 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 42px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.header__menu-1:hover {
+  visibility: visible;
+  opacity: 1;
+}
+.header__menu_list-1 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 7px 0;
+  position: fixed;
+  top: 10px;
+  right: 30px;
+  z-index: 10000;
+}
+/* ---------------------------------------------------------------------------- */
+
+.header__menu-2 {
+  position: fixed;
+  top: 42px;
+  right: 0;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.header__menu_list-2 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 7px 0;
+  position: fixed;
+  top: 40px;
+  right: 30px;
+  z-index: 10000;
+  visibility: hidden;
+}
+/* ---------------------------------------------------------------------------- */
+
+.header__menu-3 {
+  position: fixed;
+  top: 74px;
+  right: 0;
+  width: 100%;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.header__menu_list-3 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 7px 0;
+  position: fixed;
+  top: 72px;
+  right: 30px;
+  z-index: 10000;
+  visibility: hidden;
+}
+
+.line {
+  width: 100%;
+  // height: 110px;
+  height: 5px;
+  position: fixed;
+  /*background-color: red;*/
+  top: 105px;
+  left: 0;
+  z-index: 9999;
+}
+
+    </style>
+
     <script>
-      const bodyPage = document.querySelector('.root');
-      const navLink = document.querySelector('.nav');
-      const menu = document.querySelector('.menu');
+        const headerMenu1 = document.querySelector('.header__menu-1');
+const headerMenuList1 = document.querySelector('.header__menu_list-1');
+const headerMenu2 = document.querySelector('.header__menu-2');
+const headerMenuList2 = document.querySelector('.header__menu_list-2');
+const headerMenu3 = document.querySelector('.header__menu-3');
+const headerMenuList3 = document.querySelector('.header__menu_list-3');
+const line = document.querySelector('.line');
+const shop = document.querySelector('.shop');
+const furniture = document.querySelector('.furniture');
 
-      const header = document.querySelector('.header');
-      const menuHidden = document.querySelector('.menu_hidden');
+headerMenu1.addEventListener('mouseover', () => {
+  // headerMenu1.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+  headerMenu1.style.visibility = 'visible';
+  headerMenu1.style.opacity = '1';
+});
+headerMenuList1.addEventListener('mouseover', () => {
+  headerMenu1.style.visibility = 'visible';
+  headerMenu1.style.opacity = '1';
+});
 
-      const navShop = document.querySelector('.nav__list_shop');
-      const navSubmenu = document.querySelector('.nav__submenu');
-      // 3 подменю
-      const navSubmenuFurniture = document.querySelector('.nav__submenu-furniture');
-      // пункт меню мебель
-      const navLinkFurniture = document.querySelector('.nav__submenu-link_furniture');
-      /* --------------------------------------------------- */
-      bodyPage.addEventListener('click', function () {
-        navSubmenuFurniture.style.opacity = '0';
-        navSubmenu.style.opacity = '0';
-        // navSubmenuFurniture.style.cursor = 'none';
-        // navSubmenu.style.cursor = 'none';
-        navSubmenu.style.visibility = 'hidden';
-        navSubmenuFurniture.style.visibility = 'hidden';
-      });
-      // 1. При наведении на пункт МАГАЗИН → добавляется подменю  Мебель, аксессуары,дома
-      navShop.addEventListener('mouseover', function () {
-        // navSubmenu.style.display = 'flex';
-        navSubmenu.style.visibility = 'visible';
-        navSubmenu.style.opacity = '1';
-      });
+line.addEventListener('mouseover', () => {
+  headerMenu1.style.opacity = '0';
+  headerMenu2.style.opacity = '0';
+  headerMenu3.style.opacity = '0';
 
-      const hiverMenu1 = [...document.querySelectorAll('.nav__link_hidden')].forEach(
-        (hiverMenu1) => {
-          hiverMenu1.addEventListener('mouseover', () => {
-            // navSubmenu.style.display = 'none';
-            navSubmenu.style.opacity = '0';
-            navSubmenu.style.visibility = 'hidden';
-          });
-        }
-      );
+  headerMenuList2.style.visibility = 'hidden';
+  headerMenuList3.style.visibility = 'hidden';
+});
+//
+shop.addEventListener('mouseover', () => {
+  headerMenu2.style.visibility = 'visible';
+  headerMenu2.style.opacity = '1';
+  headerMenuList2.style.visibility = 'visible';
+});
+furniture.addEventListener('mouseover', () => {
+  headerMenu3.style.visibility = 'visible';
+  headerMenu3.style.opacity = '1';
+  headerMenuList3.style.visibility = 'visible';
+});
+//
+const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach(
+  (hiddenMenu1) => {
+    hiddenMenu1.addEventListener('mouseover', () => {
+      headerMenuList2.style.visibility = 'hidden';
+      headerMenuList3.style.visibility = 'hidden';
+      headerMenu2.style.opacity = '0';
+      headerMenu3.style.opacity = '0';
+    });
+  }
+);
+//
+const hiddenMenu2 = [...document.querySelectorAll('.hidden-menu-2')].forEach(
+  (hiddenMenu2) => {
+    hiddenMenu2.addEventListener('mouseover', () => {
+      headerMenuList3.style.visibility = 'hidden';
+      headerMenu3.style.opacity = '0';
+    });
+  }
+);
 
-      const linkHover = [...document.querySelectorAll('.link-hover')].forEach((linkHover) => {
-        linkHover.addEventListener('mouseover', () => {
-          navSubmenuFurniture.style.opacity = '0';
-          navSubmenuFurniture.style.visibility = 'hidden';
-        });
-      });
-
-      // 2. При наведении на пункт МЕБЕЛЬ → добавляется подменю
-      navLinkFurniture.addEventListener('mouseover', function () {
-        navSubmenuFurniture.style.visibility = 'visible';
-        navSubmenuFurniture.style.opacity = '1';
-      });
-
-      // 3. Когда мышка уходит за блок меню, подпункты исчезают
-      // menuHidden.addEventListener('mouseover', function () {
-      //   navSubmenuFurniture.style.opacity = '0';
-      //   navSubmenu.style.opacity = '0';
-      // });
     </script>
+
+
   </body>
 </html>
