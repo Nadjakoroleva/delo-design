@@ -1,216 +1,212 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-		<header class="header">
-      <div class="logo">DELO</div>
+<header class="header">
+  <div class="logo">DELO</div>
 
-      <ul class="header__menu_list-1">
-        <li><a class="shop" href="#">Магазин</a></li>
-        <li><a class="hidden-menu-1" href="#">Faq</a></li>
-        <li><a class="hidden-menu-1" href="#">Котакты</a></li>
-        <li><a class="hidden-menu-1" href="#">En</a></li>
-      </ul>
-      <div class="header__menu-1"></div>
+  <ul class="header__menu_list-1">
+    <li><a class="shop" href="#">Магазин</a></li>
+    <li><a class="hidden-menu-1" href="https://delo-design.com/faq">Faq</a></li>
+    <li>
+      <a class="hidden-menu-1" href="https://delo-design.com/contact"
+        >Котакты</a
+      >
+    </li>
+    <li><a class="hidden-menu-1" href="https://en.delo-design.com/">En</a></li>
+  </ul>
+  <div class="header__menu-1"></div>
 
-      <ul class="header__menu_list-2">
-        <li><a class="furniture" href="#">Мебель</a></li>
-        <li><a class="hidden-menu-2" href="#">Аксессуары</a></li>
-        <li><a class="hidden-menu-2" href="#">Дома</a></li>
-      </ul>
-      <div class="header__menu-2"></div>
+  <ul class="header__menu_list-2">
+    <li>
+      <a class="furniture" href="https://delo-design.com/store">Мебель</a>
+    </li>
+    <li>
+      <a class="hidden-menu-2" href="https://store.delo-design.com/"
+        >Аксессуары</a
+      >
+    </li>
+    <li><a class="hidden-menu-2" href="#">Дома</a></li>
+  </ul>
+  <div class="header__menu-2"></div>
 
-      <ul class="header__menu_list-3">
-        <li><a href="#">Стулья и кресла</a></li>
-        <li><a href="#">Столы</a></li>
-        <li><a href="#">Диваны</a></li>
-        <li><a href="#">Стеллажы</a></li>
-        <li><a href="#">Вся мебель</a></li>
-      </ul>
-      <div class="header__menu-3"></div>
-      <div class="line"></div>
-    </header>
+  <ul class="header__menu_list-3">
+    <li><a href="https://delo-design.com/chairs">Стулья и кресла</a></li>
+    <li><a href="https://delo-design.com/tables">Столы</a></li>
+    <li><a href="https://delo-design.com/sofas">Диваны</a></li>
+    <li><a href="https://delo-design.com/shelving">Стеллажы</a></li>
+    <li><a href="https://delo-design.com/store">Вся мебель</a></li>
+  </ul>
+  <div class="header__menu-3"></div>
+  <div class="line"></div>
+</header>
 
-    <style>
-a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #000;
-  transition: opacity 0.5s ease-in;
-}
-a:hover {
-  opacity: 0.4;
-}
-
-ul {
-  display: flex;
-  list-style: none;
-}
-
-ul :not(:first-child) {
-  margin-left: 40px;
-}
-
-.logo {
-  z-index: 1000;
-  position: fixed;
-  top: 10px;
-  left: 30px;
-  font-size: 30px;
-  font-weight: bold;
-}
-/* ---------------------------------------------------------------------------- */
-.header__menu-1 {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 42px;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.7);
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-}
-.header__menu-1:hover {
-  visibility: visible;
-  opacity: 1;
-}
-.header__menu_list-1 {
-  display: flex;
-  justify-content: flex-end;
-  padding: 7px 0;
-  position: fixed;
-  top: 10px;
-  right: 30px;
-  z-index: 10000;
-}
-/* ---------------------------------------------------------------------------- */
-
-.header__menu-2 {
-  position: fixed;
-  top: 42px;
-  right: 0;
-  width: 100%;
-  height: 32px;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.7);
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-}
-
-.header__menu_list-2 {
-  display: flex;
-  justify-content: flex-end;
-  padding: 7px 0;
-  position: fixed;
-  top: 40px;
-  right: 30px;
-  z-index: 10000;
-  visibility: hidden;
-}
-/* ---------------------------------------------------------------------------- */
-
-.header__menu-3 {
-  position: fixed;
-  top: 74px;
-  right: 0;
-  width: 100%;
-  height: 32px;
-  background-color: rgba(255, 255, 255, 0.7);
-  z-index: 1;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-}
-.header__menu_list-3 {
-  display: flex;
-  justify-content: flex-end;
-  padding: 7px 0;
-  position: fixed;
-  top: 72px;
-  right: 30px;
-  z-index: 10000;
-  visibility: hidden;
-}
-
-.line {
-  width: 100%;
-  // height: 110px;
-  height: 5px;
-  position: fixed;
-  /*background-color: red;*/
-  top: 105px;
-  left: 0;
-  z-index: 9999;
-}
-
-    </style>
-
-    <script>
-        const headerMenu1 = document.querySelector('.header__menu-1');
-const headerMenuList1 = document.querySelector('.header__menu_list-1');
-const headerMenu2 = document.querySelector('.header__menu-2');
-const headerMenuList2 = document.querySelector('.header__menu_list-2');
-const headerMenu3 = document.querySelector('.header__menu-3');
-const headerMenuList3 = document.querySelector('.header__menu_list-3');
-const line = document.querySelector('.line');
-const shop = document.querySelector('.shop');
-const furniture = document.querySelector('.furniture');
-
-headerMenu1.addEventListener('mouseover', () => {
-  // headerMenu1.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
-  headerMenu1.style.visibility = 'visible';
-  headerMenu1.style.opacity = '1';
-});
-headerMenuList1.addEventListener('mouseover', () => {
-  headerMenu1.style.visibility = 'visible';
-  headerMenu1.style.opacity = '1';
-});
-
-line.addEventListener('mouseover', () => {
-  headerMenu1.style.opacity = '0';
-  headerMenu2.style.opacity = '0';
-  headerMenu3.style.opacity = '0';
-
-  headerMenuList2.style.visibility = 'hidden';
-  headerMenuList3.style.visibility = 'hidden';
-});
-//
-shop.addEventListener('mouseover', () => {
-  headerMenu2.style.visibility = 'visible';
-  headerMenu2.style.opacity = '1';
-  headerMenuList2.style.visibility = 'visible';
-});
-furniture.addEventListener('mouseover', () => {
-  headerMenu3.style.visibility = 'visible';
-  headerMenu3.style.opacity = '1';
-  headerMenuList3.style.visibility = 'visible';
-});
-//
-const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach(
-  (hiddenMenu1) => {
-    hiddenMenu1.addEventListener('mouseover', () => {
-      headerMenuList2.style.visibility = 'hidden';
-      headerMenuList3.style.visibility = 'hidden';
-      headerMenu2.style.opacity = '0';
-      headerMenu3.style.opacity = '0';
-    });
+<style>
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    transition: opacity 0.5s ease-in;
   }
-);
-//
-const hiddenMenu2 = [...document.querySelectorAll('.hidden-menu-2')].forEach(
-  (hiddenMenu2) => {
-    hiddenMenu2.addEventListener('mouseover', () => {
-      headerMenuList3.style.visibility = 'hidden';
-      headerMenu3.style.opacity = '0';
-    });
+  a:hover {
+    opacity: 0.4;
   }
-);
 
-    </script>
+  ul {
+    display: flex;
+    list-style: none;
+  }
 
+  ul :not(:first-child) {
+    margin-left: 40px;
+  }
+  .logo {
+    z-index: 1000;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 48px;
+    font-weight: bold;
+  }
+  /* ---------------------------------------------------------------------------- */
+  .header__menu-1 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 42px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  .header__menu-1:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+  .header__menu_list-1 {
+    display: flex;
+    justify-content: flex-end;
+    padding: 7px 0;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10000;
+  }
+  /* ---------------------------------------------------------------------------- */
 
-  </body>
-</html>
+  .header__menu-2 {
+    position: fixed;
+    top: 42px;
+    right: 0;
+    width: 100%;
+    height: 32px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+
+  .header__menu_list-2 {
+    display: flex;
+    justify-content: flex-end;
+    padding: 7px 0;
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    z-index: 10000;
+    visibility: hidden;
+  }
+  /* ---------------------------------------------------------------------------- */
+
+  .header__menu-3 {
+    position: fixed;
+    top: 74px;
+    right: 0;
+    width: 100%;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  .header__menu_list-3 {
+    display: flex;
+    justify-content: flex-end;
+    padding: 7px 0;
+    position: fixed;
+    top: 72px;
+    right: 10px;
+    z-index: 10000;
+    visibility: hidden;
+  }
+
+  .line {
+    width: 100%;
+    // height: 110px;
+    height: 5px;
+    position: fixed;
+    // background-color: red;
+    top: 105px;
+    left: 0;
+    z-index: 9999;
+  }
+</style>
+
+<script>
+  const headerMenu1 = document.querySelector('.header__menu-1');
+  const headerMenuList1 = document.querySelector('.header__menu_list-1');
+  const headerMenu2 = document.querySelector('.header__menu-2');
+  const headerMenuList2 = document.querySelector('.header__menu_list-2');
+  const headerMenu3 = document.querySelector('.header__menu-3');
+  const headerMenuList3 = document.querySelector('.header__menu_list-3');
+  const line = document.querySelector('.line');
+  const shop = document.querySelector('.shop');
+  const furniture = document.querySelector('.furniture');
+
+  headerMenu1.addEventListener('mouseover', () => {
+    // headerMenu1.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+    headerMenu1.style.visibility = 'visible';
+    headerMenu1.style.opacity = '1';
+  });
+  headerMenuList1.addEventListener('mouseover', () => {
+    headerMenu1.style.visibility = 'visible';
+    headerMenu1.style.opacity = '1';
+  });
+
+  line.addEventListener('mouseout', () => {
+    headerMenu1.style.opacity = '0';
+    headerMenu2.style.opacity = '0';
+    headerMenu3.style.opacity = '0';
+
+    headerMenuList2.style.visibility = 'hidden';
+    headerMenuList3.style.visibility = 'hidden';
+  });
+  //
+  shop.addEventListener('mouseover', () => {
+    headerMenu2.style.visibility = 'visible';
+    headerMenu2.style.opacity = '1';
+    headerMenuList2.style.visibility = 'visible';
+  });
+  furniture.addEventListener('mouseover', () => {
+    headerMenu3.style.visibility = 'visible';
+    headerMenu3.style.opacity = '1';
+    headerMenuList3.style.visibility = 'visible';
+  });
+  //
+  const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach(
+    (hiddenMenu1) => {
+      hiddenMenu1.addEventListener('mouseover', () => {
+        headerMenuList2.style.visibility = 'hidden';
+        headerMenuList3.style.visibility = 'hidden';
+        headerMenu2.style.opacity = '0';
+        headerMenu3.style.opacity = '0';
+      });
+    }
+  );
+  //
+  const hiddenMenu2 = [...document.querySelectorAll('.hidden-menu-2')].forEach(
+    (hiddenMenu2) => {
+      hiddenMenu2.addEventListener('mouseover', () => {
+        headerMenuList3.style.visibility = 'hidden';
+        headerMenu3.style.opacity = '0';
+      });
+    }
+  );
+</script>
