@@ -43,6 +43,7 @@
     text-decoration: none;
     color: #000;
     transition: opacity 0.5s ease-in;
+    font-family: 'Futura PT', Helvetica, sans-serif !important;
   }
   a:hover {
     opacity: 0.4;
@@ -64,14 +65,13 @@
     font-size: 48px;
     font-weight: bold;
   }
-  /* ---------------------------------------------------------------------------- */
   .header__menu-1 {
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     height: 42px;
-    z-index: 1;
+    z-index: 100;
     background-color: rgba(255, 255, 255, 0.7);
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
@@ -89,7 +89,6 @@
     right: 10px;
     z-index: 10000;
   }
-  /* ---------------------------------------------------------------------------- */
 
   .header__menu-2 {
     position: fixed;
@@ -97,7 +96,7 @@
     right: 0;
     width: 100%;
     height: 32px;
-    z-index: 1;
+    z-index: 100;
     background-color: rgba(255, 255, 255, 0.7);
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
@@ -113,7 +112,6 @@
     z-index: 10000;
     visibility: hidden;
   }
-  /* ---------------------------------------------------------------------------- */
 
   .header__menu-3 {
     position: fixed;
@@ -122,7 +120,7 @@
     width: 100%;
     height: 32px;
     background-color: rgba(255, 255, 255, 0.7);
-    z-index: 1;
+    z-index: 100;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
   }
@@ -139,10 +137,8 @@
 
   .line {
     width: 100%;
-    // height: 110px;
     height: 5px;
     position: fixed;
-    // background-color: red;
     top: 105px;
     left: 0;
     z-index: 9999;
@@ -161,7 +157,6 @@
   const furniture = document.querySelector('.furniture');
 
   headerMenu1.addEventListener('mouseover', () => {
-    // headerMenu1.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
     headerMenu1.style.visibility = 'visible';
     headerMenu1.style.opacity = '1';
   });
