@@ -5,9 +5,7 @@
     <li><a class="shop" href="#">Магазин</a></li>
     <li><a class="hidden-menu-1" href="https://delo-design.com/faq">Faq</a></li>
     <li>
-      <a class="hidden-menu-1" href="https://delo-design.com/contact"
-        >Котакты</a
-      >
+      <a class="hidden-menu-1" href="https://delo-design.com/contact">Котакты</a>
     </li>
     <li><a class="hidden-menu-1" href="https://en.delo-design.com/">En</a></li>
   </ul>
@@ -18,9 +16,7 @@
       <a class="furniture" href="https://delo-design.com/store">Мебель</a>
     </li>
     <li>
-      <a class="hidden-menu-2" href="https://store.delo-design.com/"
-        >Аксессуары</a
-      >
+      <a class="hidden-menu-2" href="https://store.delo-design.com/">Аксессуары</a>
     </li>
     <li><a class="hidden-menu-2" href="#">Дома</a></li>
   </ul>
@@ -44,6 +40,7 @@
     color: #000;
     transition: opacity 0.5s ease-in;
     font-family: 'Futura PT', Helvetica, sans-serif !important;
+    font-weight: SEMI BOLD;
   }
   a:hover {
     opacity: 0.4;
@@ -55,49 +52,51 @@
   }
 
   ul :not(:first-child) {
-    margin-left: 40px;
+    margin-left: 32px;
   }
+
   .logo {
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: 40px;
+    left: 40px;
     font-family: 'Futura PT', Helvetica, sans-serif !important;
     font-size: 48px;
     font-weight: bold;
-
     z-index: 1000;
   }
+
   .header__menu-1 {
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
-    height: 42px;
+    height: 76px;
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.7);
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
   }
+
   .header__menu-1:hover {
     visibility: visible;
     opacity: 1;
   }
+
   .header__menu_list-1 {
     display: flex;
     justify-content: flex-end;
-    padding: 7px 0;
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 33px;
+    right: 40px;
     z-index: 10000;
   }
 
   .header__menu-2 {
     position: fixed;
-    top: 42px;
+    top: 76px;
     right: 0;
     width: 100%;
-    height: 32px;
+    height: 29px;
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.7);
     opacity: 0;
@@ -107,32 +106,31 @@
   .header__menu_list-2 {
     display: flex;
     justify-content: flex-end;
-    padding: 7px 0;
     position: fixed;
-    top: 40px;
-    right: 10px;
+    top: 60px;
+    right: 40px;
     z-index: 10000;
     visibility: hidden;
   }
 
   .header__menu-3 {
     position: fixed;
-    top: 74px;
+    top: 105px;
     right: 0;
     width: 100%;
-    height: 32px;
+    height: 26px;
     background-color: rgba(255, 255, 255, 0.7);
     z-index: 100;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
   }
+
   .header__menu_list-3 {
     display: flex;
     justify-content: flex-end;
-    padding: 7px 0;
     position: fixed;
-    top: 72px;
-    right: 10px;
+    top: 87px;
+    right: 40px;
     z-index: 10000;
     visibility: hidden;
   }
@@ -141,7 +139,7 @@
     width: 100%;
     height: 5px;
     position: fixed;
-    top: 105px;
+    top: 130px;
     left: 0;
     z-index: 9999;
   }
@@ -186,24 +184,20 @@
     headerMenu3.style.opacity = '1';
     headerMenuList3.style.visibility = 'visible';
   });
-  //
-  const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach(
-    (hiddenMenu1) => {
-      hiddenMenu1.addEventListener('mouseover', () => {
-        headerMenuList2.style.visibility = 'hidden';
-        headerMenuList3.style.visibility = 'hidden';
-        headerMenu2.style.opacity = '0';
-        headerMenu3.style.opacity = '0';
-      });
-    }
-  );
-  //
-  const hiddenMenu2 = [...document.querySelectorAll('.hidden-menu-2')].forEach(
-    (hiddenMenu2) => {
-      hiddenMenu2.addEventListener('mouseover', () => {
-        headerMenuList3.style.visibility = 'hidden';
-        headerMenu3.style.opacity = '0';
-      });
-    }
-  );
+
+  const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach((hiddenMenu1) => {
+    hiddenMenu1.addEventListener('mouseover', () => {
+      headerMenuList2.style.visibility = 'hidden';
+      headerMenuList3.style.visibility = 'hidden';
+      headerMenu2.style.opacity = '0';
+      headerMenu3.style.opacity = '0';
+    });
+  });
+
+  const hiddenMenu2 = [...document.querySelectorAll('.hidden-menu-2')].forEach((hiddenMenu2) => {
+    hiddenMenu2.addEventListener('mouseover', () => {
+      headerMenuList3.style.visibility = 'hidden';
+      headerMenu3.style.opacity = '0';
+    });
+  });
 </script>
