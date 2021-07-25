@@ -1,13 +1,12 @@
 <header class="header">
   <p class="logo">Delo</p>
 
+  <div class="line"></div>
   <ul class="header__menu_list-1">
     <li><a class="shop" href="#">Магазин</a></li>
     <li><a class="hidden-menu-1" href="https://delo-design.com/faq">Faq</a></li>
     <li>
-      <a class="hidden-menu-1" href="https://delo-design.com/contact"
-        >Котакты</a
-      >
+      <a class="hidden-menu-1" href="https://delo-design.com/contact">Котакты</a>
     </li>
     <li><a class="hidden-menu-1" href="https://en.delo-design.com/">En</a></li>
   </ul>
@@ -18,9 +17,7 @@
       <a class="furniture" href="https://delo-design.com/store">Мебель</a>
     </li>
     <li>
-      <a class="hidden-menu-2" href="https://store.delo-design.com/"
-        >Аксессуары</a
-      >
+      <a class="hidden-menu-2" href="https://store.delo-design.com/">Аксессуары</a>
     </li>
     <li><a class="hidden-menu-2" href="#">Дома</a></li>
   </ul>
@@ -34,7 +31,6 @@
     <li><a href="https://delo-design.com/store">Вся мебель</a></li>
   </ul>
   <div class="header__menu-3"></div>
-  <div class="line"></div>
 </header>
 
 <style>
@@ -154,15 +150,6 @@
     z-index: 10000;
     visibility: hidden;
   }
-
-  .line {
-    width: 100%;
-    height: 5px;
-    position: fixed;
-    top: 130px;
-    left: 0;
-    z-index: 9999;
-  }
 </style>
 
 <script>
@@ -185,15 +172,18 @@
     headerMenu1.style.opacity = '1';
   });
 
-  line.addEventListener('mouseout', () => {
-    headerMenu1.style.opacity = '0';
-    headerMenu2.style.opacity = '0';
-    headerMenu3.style.opacity = '0';
+  document.onmousemove = (event) => {
+    if (event.clientY > 135) {
+      headerMenu1.style.opacity = '0';
+      headerMenu2.style.opacity = '0';
+      headerMenu3.style.opacity = '0';
 
-    headerMenuList2.style.visibility = 'hidden';
-    headerMenuList3.style.visibility = 'hidden';
-  });
-  //
+      headerMenuList2.style.visibility = 'hidden';
+      headerMenuList3.style.visibility = 'hidden';
+    } else {
+    }
+  };
+
   shop.addEventListener('mouseover', () => {
     headerMenu2.style.visibility = 'visible';
     headerMenu2.style.opacity = '1';
@@ -205,23 +195,19 @@
     headerMenuList3.style.visibility = 'visible';
   });
 
-  const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach(
-    (hiddenMenu1) => {
-      hiddenMenu1.addEventListener('mouseover', () => {
-        headerMenuList2.style.visibility = 'hidden';
-        headerMenuList3.style.visibility = 'hidden';
-        headerMenu2.style.opacity = '0';
-        headerMenu3.style.opacity = '0';
-      });
-    }
-  );
+  const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach((hiddenMenu1) => {
+    hiddenMenu1.addEventListener('mouseover', () => {
+      headerMenuList2.style.visibility = 'hidden';
+      headerMenuList3.style.visibility = 'hidden';
+      headerMenu2.style.opacity = '0';
+      headerMenu3.style.opacity = '0';
+    });
+  });
 
-  const hiddenMenu2 = [...document.querySelectorAll('.hidden-menu-2')].forEach(
-    (hiddenMenu2) => {
-      hiddenMenu2.addEventListener('mouseover', () => {
-        headerMenuList3.style.visibility = 'hidden';
-        headerMenu3.style.opacity = '0';
-      });
-    }
-  );
+  const hiddenMenu2 = [...document.querySelectorAll('.hidden-menu-2')].forEach((hiddenMenu2) => {
+    hiddenMenu2.addEventListener('mouseover', () => {
+      headerMenuList3.style.visibility = 'hidden';
+      headerMenu3.style.opacity = '0';
+    });
+  });
 </script>
