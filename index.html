@@ -44,9 +44,6 @@
     letter-spacing: 0.5px;
     font-weight: SEMI BOLD;
   }
-  a:hover {
-    opacity: 0.4;
-  }
 
   ul {
     display: flex;
@@ -99,6 +96,7 @@
     top: 40px;
     right: 30px;
     z-index: 10000;
+    padding: 0;
   }
 
   @media (max-width: 980px) {
@@ -127,6 +125,7 @@
     right: 30px;
     z-index: 10000;
     visibility: hidden;
+    padding: 0;
   }
 
   .header__menu-3 {
@@ -150,6 +149,13 @@
     z-index: 10000;
     visibility: hidden;
   }
+
+  .shop {
+    padding-bottom: 15px;
+  }
+  .furniture {
+    padding-bottom: 15px;
+  }
 </style>
 
 <script>
@@ -166,7 +172,19 @@
   headerMenu1.addEventListener('mouseover', () => {
     headerMenu1.style.visibility = 'visible';
     headerMenu1.style.opacity = '1';
+
+    headerMenu2.style.opacity = '0';
+    headerMenu3.style.opacity = '0';
+    headerMenuList2.style.visibility = 'hidden';
+    headerMenuList3.style.visibility = 'hidden';
   });
+  headerMenu2.addEventListener('mouseover', () => {
+    headerMenu2.style.opacity = '0';
+    headerMenu3.style.opacity = '0';
+    headerMenuList2.style.visibility = 'hidden';
+    headerMenuList3.style.visibility = 'hidden';
+  });
+
   headerMenuList1.addEventListener('mouseover', () => {
     headerMenu1.style.visibility = 'visible';
     headerMenu1.style.opacity = '1';
@@ -189,6 +207,7 @@
     headerMenu2.style.opacity = '1';
     headerMenuList2.style.visibility = 'visible';
   });
+
   furniture.addEventListener('mouseover', () => {
     headerMenu3.style.visibility = 'visible';
     headerMenu3.style.opacity = '1';
