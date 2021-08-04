@@ -1,0 +1,6 @@
+{
+  "htmlvalidator.enabled" : false,
+  "prettier.default-config.printWidth" : 100,
+  "workspace.color" : 0,
+  "workspace.name" : "delo-design"
+}
