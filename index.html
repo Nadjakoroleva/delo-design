@@ -5,7 +5,9 @@
     <li><a class="shop" href="#">Магазин</a></li>
     <li><a class="hidden-menu-1" href="https://delo-design.com/faq">Faq</a></li>
     <li>
-      <a class="hidden-menu-1" href="https://delo-design.com/contact">Котакты</a>
+      <a class="hidden-menu-1" href="https://delo-design.com/contact"
+        >Котакты</a
+      >
     </li>
     <li><a class="hidden-menu-1" href="https://en.delo-design.com/">En</a></li>
   </ul>
@@ -16,9 +18,13 @@
       <a class="furniture" href="https://delo-design.com/store">Мебель</a>
     </li>
     <li>
-      <a class="hidden-menu-2" href="https://store.delo-design.com/">Аксессуары</a>
+      <a class="hidden-menu-2" href="https://store.delo-design.com/"
+        >Аксессуары</a
+      >
     </li>
-    <li><a class="hidden-menu-2" href="#">Дома</a></li>
+    <li>
+      <a class="hidden-menu-2" href="https://delo-design.com/houses">Дома</a>
+    </li>
   </ul>
   <div class="header__menu-2"></div>
 
@@ -37,7 +43,7 @@
     text-transform: uppercase;
     text-decoration: none;
     color: #000000;
-    transition: opacity 0.5s ease-in;
+    transition: opacity 0.6s ease-in;
     font-family: 'Lab', Arial, sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -56,7 +62,7 @@
 
   .logo {
     position: fixed;
-    top: 30px;
+    top: 29px;
     left: 30px;
     font-family: 'Lab', Arial, sans-serif;
     font-size: 62px;
@@ -71,11 +77,11 @@
     top: 0;
     right: 0;
     width: 100%;
-    height: 80px;
+    height: 85px;
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.7);
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s, opacity 0.1s ease-in;
   }
 
   @media (max-width: 980px) {
@@ -107,14 +113,14 @@
 
   .header__menu-2 {
     position: fixed;
-    top: 80px;
+    top: 85px;
     right: 0;
     width: 100%;
-    height: 29px;
+    height: 34px;
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.7);
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s, opacity 0.1s ease-in;
   }
 
   .header__menu_list-2 {
@@ -130,14 +136,14 @@
 
   .header__menu-3 {
     position: fixed;
-    top: 109px;
+    top: 119px;
     right: 0;
     width: 100%;
     height: 29px;
     background-color: rgba(255, 255, 255, 0.7);
     z-index: 100;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s, opacity 0.1s ease-in;
   }
 
   .header__menu_list-3 {
@@ -154,7 +160,18 @@
     padding-bottom: 15px;
   }
   .furniture {
+    position: relative;
     padding-bottom: 15px;
+  }
+
+  .furniture::before {
+    content: '';
+    width: 300px;
+    height: 40px;
+    top: 0;
+    right: 60px;
+    position: absolute;
+    cursor: default;
   }
 </style>
 
@@ -214,19 +231,23 @@
     headerMenuList3.style.visibility = 'visible';
   });
 
-  const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach((hiddenMenu1) => {
-    hiddenMenu1.addEventListener('mouseover', () => {
-      headerMenuList2.style.visibility = 'hidden';
-      headerMenuList3.style.visibility = 'hidden';
-      headerMenu2.style.opacity = '0';
-      headerMenu3.style.opacity = '0';
-    });
-  });
+  const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach(
+    (hiddenMenu1) => {
+      hiddenMenu1.addEventListener('mouseover', () => {
+        headerMenuList2.style.visibility = 'hidden';
+        headerMenuList3.style.visibility = 'hidden';
+        headerMenu2.style.opacity = '0';
+        headerMenu3.style.opacity = '0';
+      });
+    }
+  );
 
-  const hiddenMenu2 = [...document.querySelectorAll('.hidden-menu-2')].forEach((hiddenMenu2) => {
-    hiddenMenu2.addEventListener('mouseover', () => {
-      headerMenuList3.style.visibility = 'hidden';
-      headerMenu3.style.opacity = '0';
-    });
-  });
+  const hiddenMenu2 = [...document.querySelectorAll('.hidden-menu-2')].forEach(
+    (hiddenMenu2) => {
+      hiddenMenu2.addEventListener('mouseover', () => {
+        headerMenuList3.style.visibility = 'hidden';
+        headerMenu3.style.opacity = '0';
+      });
+    }
+  );
 </script>
