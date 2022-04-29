@@ -3,13 +3,17 @@
 
   <ul class="header__menu_list-1">
     <li><a class="shop" href="#">Магазин</a></li>
-    <li><a class="hidden-menu-1" href="https://delo-design.com/faq">Faq</a></li>
     <li>
-      <a class="hidden-menu-1" href="https://delo-design.com/contact"
-        >Контакты</a
+      <a class="hidden-menu-1" href="https://delo-design.com/projects"
+        >Проекты</a
       >
     </li>
-    <li><a class="hidden-menu-1" href="https://en.delo-design.com/">En</a></li>
+    <li>
+      <a class="info" href="https://delo-design.com/">Инфо</a>
+    </li>
+    <li>
+      <a class="hidden-menu-1" href="https://en.delo-design.com/">En</a>
+    </li>
   </ul>
   <div class="header__menu-1"></div>
 
@@ -26,18 +30,28 @@
       <a class="hidden-menu-2" href="https://delo-design.com/houses">Дома</a>
     </li>
   </ul>
+  <ul class="header__menu_list-info">
+    <li>
+      <a class="about" href="https://delo-design.com/">О нас</a>
+    </li>
+    <li>
+      <a class="faq" href="https://delo-design.com/faq">Faq</a>
+    </li>
+    <li>
+      <a class="contact" href="https://delo-design.com/contact">Контакты</a>
+    </li>
+  </ul>
   <div class="header__menu-2"></div>
 
   <ul class="header__menu_list-3">
     <li><a href="https://delo-design.com/chairs">Стулья и кресла</a></li>
     <li><a href="https://delo-design.com/tables">Столы</a></li>
     <li><a href="https://delo-design.com/sofas">Диваны</a></li>
-    <li><a href="https://delo-design.com/shelving">Стеллажы</a></li>
+    <li><a href="https://delo-design.com/shelving">Стеллажи</a></li>
     <li><a href="https://delo-design.com/store">Вся мебель</a></li>
   </ul>
   <div class="header__menu-3"></div>
 </header>
-
 <style>
   .header a {
     text-transform: uppercase;
@@ -124,6 +138,17 @@
     transition: visibility 0s, opacity 0.1s ease-in;
   }
 
+  .header__menu_list-info {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 55px;
+    right: 30px;
+    z-index: 10000;
+    visibility: hidden;
+    padding: 15px 0 13px 0;
+  }
+
   .header__menu_list-2 {
     display: flex;
     justify-content: flex-end;
@@ -134,14 +159,26 @@
     visibility: hidden;
     padding: 15px 0 0 0;
   }
+
   .header__menu_list-2::after {
     position: absolute;
     content: '';
     top: 30px;
-    left: 0;
-    width: 100%;
-    height: 22px;
+    width: 575px;
+    height: 32px;
+    top: 22px;
+    z-index: -1;
   }
+
+  .header__menu_list-2::before {
+    position: absolute;
+    content: '';
+    width: 128px;
+    height: 30px;
+    top: -2px;
+    left: -128px;
+  }
+
   .header__menu-3 {
     position: fixed;
     top: 119px;
@@ -163,24 +200,6 @@
     z-index: 10000;
     visibility: hidden;
   }
-
-  .shop {
-    padding-bottom: 15px;
-  }
-  .furniture {
-    position: relative;
-    padding-bottom: 15px;
-  }
-
-  .furniture::before {
-    content: '';
-    width: 300px;
-    height: 40px;
-    top: 0;
-    right: 60px;
-    position: absolute;
-    cursor: default;
-  }
 </style>
 
 <script>
@@ -188,12 +207,14 @@
   const headerMenuList1 = document.querySelector('.header__menu_list-1');
   const headerMenu2 = document.querySelector('.header__menu-2');
   const headerMenuList2 = document.querySelector('.header__menu_list-2');
+  const headerMenuListInfo = document.querySelector('.header__menu_list-info');
 
   const headerMenu3 = document.querySelector('.header__menu-3');
   const headerMenuList3 = document.querySelector('.header__menu_list-3');
   const line = document.querySelector('.line');
   const shop = document.querySelector('.shop');
   const furniture = document.querySelector('.furniture');
+  const info = document.querySelector('.info');
 
   headerMenu1.addEventListener('mouseover', () => {
     headerMenu1.style.visibility = 'visible';
@@ -203,12 +224,14 @@
     headerMenu3.style.opacity = '0';
     headerMenuList2.style.visibility = 'hidden';
     headerMenuList3.style.visibility = 'hidden';
+    headerMenuListInfo.style.visibility = 'hidden';
   });
   headerMenu2.addEventListener('mouseover', () => {
     headerMenu2.style.opacity = '0';
     headerMenu3.style.opacity = '0';
     headerMenuList2.style.visibility = 'hidden';
     headerMenuList3.style.visibility = 'hidden';
+    headerMenuListInfo.style.visibility = 'hidden';
   });
 
   headerMenuList1.addEventListener('mouseover', () => {
@@ -217,13 +240,14 @@
   });
 
   document.onmousemove = (event) => {
-    if (event.clientY > 134) {
+    if (event.clientY > 148) {
       headerMenu1.style.opacity = '0';
       headerMenu2.style.opacity = '0';
       headerMenu3.style.opacity = '0';
 
       headerMenuList2.style.visibility = 'hidden';
       headerMenuList3.style.visibility = 'hidden';
+      headerMenuListInfo.style.visibility = 'hidden';
     } else {
     }
   };
@@ -232,6 +256,7 @@
     headerMenu2.style.visibility = 'visible';
     headerMenu2.style.opacity = '1';
     headerMenuList2.style.visibility = 'visible';
+    headerMenuListInfo.style.visibility = 'hidden';
   });
 
   furniture.addEventListener('mouseover', () => {
@@ -240,11 +265,19 @@
     headerMenuList3.style.visibility = 'visible';
   });
 
+  info.addEventListener('mouseover', () => {
+    headerMenu2.style.visibility = 'visible';
+    headerMenu2.style.opacity = '1';
+    headerMenuListInfo.style.visibility = 'visible';
+    headerMenuList2.style.visibility = 'hidden';
+  });
+
   const hiddenMenu1 = [...document.querySelectorAll('.hidden-menu-1')].forEach(
     (hiddenMenu1) => {
       hiddenMenu1.addEventListener('mouseover', () => {
         headerMenuList2.style.visibility = 'hidden';
         headerMenuList3.style.visibility = 'hidden';
+        headerMenuListInfo.style.visibility = 'hidden';
         headerMenu2.style.opacity = '0';
         headerMenu3.style.opacity = '0';
       });
